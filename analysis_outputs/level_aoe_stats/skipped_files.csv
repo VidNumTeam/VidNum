@@ -1,1 +1,23 @@
-﻿
+﻿model,mode,file,reason
+InternVL2_5-8B,CoT,results\InternVL2_5-8B_CoT.xlsx,cannot infer GT column
+InternVL2_5-8B,NoCoT,results\InternVL2_5-8B_NoCoT.xlsx,cannot infer GT column
+InternVL3-8B,CoT,results\InternVL3-8B_CoT.xlsx,cannot infer GT column
+InternVL3-8B,NoCoT,results\InternVL3-8B_NoCoT.xlsx,cannot infer GT column
+InternVL3_5-8B,CoT,results\InternVL3_5-8B_CoT.xlsx,cannot infer GT column
+InternVL3_5-8B,NoCoT,results\InternVL3_5-8B_NoCoT.xlsx,cannot infer GT column
+LLaVA-NeXT-7B,CoT,results\LLaVA-NeXT-7B_CoT.xlsx,cannot infer GT column
+LLaVA-NeXT-7B,NoCoT,results\LLaVA-NeXT-7B_NoCoT.xlsx,cannot infer GT column
+Qwen2.5-VL-7B,CoT,results\Qwen2.5-VL-7B_CoT.xlsx,cannot infer GT column
+Qwen2.5-VL-7B,NoCoT,results\Qwen2.5-VL-7B_NoCoT.xlsx,cannot infer GT column
+Qwen3-VL-8B,CoT,results\Qwen3-VL-8B_CoT.xlsx,cannot infer GT column
+Qwen3-VL-8B,NoCoT,results\Qwen3-VL-8B_NoCoT.xlsx,cannot infer GT column
+InternVL3-14B,CoT,results\InternVL3-14B_CoT.xlsx,cannot infer GT column
+InternVL3-14B,NoCoT,results\InternVL3-14B_NoCoT.xlsx,cannot infer GT column
+InternVL3-38B,CoT,results\InternVL3-38B_CoT.xlsx,cannot infer GT column
+InternVL3-38B,NoCoT,results\InternVL3-38B_NoCoT.xlsx,cannot infer GT column
+InternVL3-78B,CoT,results\InternVL3-78B_CoT.xlsx,cannot infer GT column
+InternVL3-78B,NoCoT,results\InternVL3-78B_NoCoT.xlsx,cannot infer GT column
+gemini-3-flash-preview,CoT,results\gemini-3-flash-preview_CoT.xlsx,cannot infer GT column
+gemini-3-flash-preview,NoCoT,results\gemini-3-flash-preview_NoCoT.xlsx,cannot infer GT column
+gemini-3.1-pro-preview,CoT,results\gemini-3.1-pro-preview_CoT.xlsx,cannot infer GT column
+gemini-3.1-pro-preview,NoCoT,results\gemini-3.1-pro-preview_NoCoT.xlsx,cannot infer GT column

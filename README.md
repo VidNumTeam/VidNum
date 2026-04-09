@@ -6,7 +6,7 @@
 
 VidNum-1.4K is a benchmark for evaluating **video-based numerical reasoning** in Vision-Language Models (VLMs).
 
-## Current Project Format (New Naming)
+## Current Project Format 
 
 This repository now uses a unified naming scheme for data and video mapping.
 
@@ -14,17 +14,9 @@ This repository now uses a unified naming scheme for data and video mapping.
 - Question column: `question`
 - Options columns: `option_A`, `option_B`, `option_C`, `option_D`
 - Video files: stored in `videos/` as `QID_{ID}.mp4`
-- Legacy OSS/timestamp mapping is no longer used in evaluation scripts.
 
-## Data-Video Mapping Rule
 
-Each row is mapped to one video file.
-
-- Preferred: use `Video_Path` column when present.
-- Fallback: if `Video_Path` is empty, scripts use `QID_{ID}.mp4`.
-- Final resolved path: `videos/<Video_Path or QID_{ID}.mp4>`.
-
-## Dataset Schema (Required)
+## Dataset Schema 
 
 Minimum required columns:
 
@@ -63,57 +55,18 @@ Common optional columns:
 └── plot_cot_combined.py
 ```
 
-## Quick Start
+## Evaluation Scripts
 
-Before rerunning any test/inference script, you must download the dataset assets from Hugging Face first:
+- All test/evaluation scripts are under `run_evaluation/` (current folder in this repo: `run_VLM_evaluation/`).
+- If you want to rerun any evaluation script, download the benchmark assets first from Hugging Face:
+  - https://huggingface.co/datasets/JoeyCCC/VidNum-1.4K
 
-- https://huggingface.co/datasets/JoeyCCC/VidNum-1.4K
-
-After download, place the dataset files and videos into this project (especially `question_datasets/` and `videos/`) before running scripts.
-
-### 1) Prepare data and videos
-
-1. Place `VidNum1_4K_options_en_category_en.xlsx` under `question_datasets/`.
-2. Put videos under `videos/` with names like `QID_1.mp4`, `QID_2.mp4`, ...
-
-### 2) Run evaluation
-
-Run scripts from project root.
+## Reproduce Paper Results
 
 ```bash
-# InternVL examples
-python run_VLM_evaluation/run_internVL_noCoT.py
-python run_VLM_evaluation/run_internVL3_8B.py
-
-# Qwen examples
-python run_VLM_evaluation/run_qwen2_5_vl.py
-python run_VLM_evaluation/run_qwen3_vl_noCoT.py
-
-# LLaVA-Next examples
-python run_VLM_evaluation/run_llava_next.py
-```
-
-Gemini script supports CLI args:
-
-```bash
-python run_VLM_evaluation/run_gemini31_vl.py \
-  --data question_datasets/VidNum1_4K_options_en_category_en.xlsx \
-  --template templates/qa_prompt_EN_noCoT.md
-```
-
-### 3) Run analysis
-
-```bash
-python analyze_shotcut_accuracy_by_model.py
+python ana_level_by_or_er.py
 python ana_level_by_or_er.py
 python plot_vidnum14k_overview_panels.py
 python plot_intern_scale_level_curves.py
 python plot_cot_combined.py
 ```
-
-## Reproducibility Notes
-
-- Keep prompt templates fixed when comparing models.
-- Keep frame sampling policy fixed (1 FPS / 48-frame cap depending on script).
-- For CoT vs NoCoT, change only prompting style.
-- Use the same filtered evaluation subset for fair comparison.
