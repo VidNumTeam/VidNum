@@ -65,6 +65,12 @@ Common optional columns:
 
 ## Quick Start
 
+Before rerunning any test/inference script, you must download the dataset assets from Hugging Face first:
+
+- https://huggingface.co/datasets/JoeyCCC/VidNum-1.4K
+
+After download, place the dataset files and videos into this project (especially `question_datasets/` and `videos/`) before running scripts.
+
 ### 1) Prepare data and videos
 
 1. Place `VidNum1_4K_options_en_category_en.xlsx` under `question_datasets/`.
