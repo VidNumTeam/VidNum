@@ -1,0 +1,23 @@
+{
+  "input_xlsx": "results/vidnum14k_metadata_annotations.xlsx",
+  "row_count": 1379,
+  "duration_col": "时间戳",
+  "duration_parsed_count": 1379,
+  "duration_missing_count": 0,
+  "duration_missing_ids": [],
+  "topic_major_col": "视频大类",
+  "topic_minor_col": "视频小类",
+  "unknown_minor_count": 0,
+  "notes": [
+    "Outer-ring labels are all shown in English.",
+    "Minor aliases are merged (e.g., 旅游->旅行, 美食->食物, TVshow variants merged)."
+  ],
+  "outputs": {
+    "topic_donut_png": "analysis_outputs/metadata_stats/paper_style_panels/topic_hierarchy_donut_en.png",
+    "topic_donut_pdf": "analysis_outputs/metadata_stats/paper_style_panels/topic_hierarchy_donut_en.pdf",
+    "duration_png": "analysis_outputs/metadata_stats/paper_style_panels/video_duration_distribution.png",
+    "duration_pdf": "analysis_outputs/metadata_stats/paper_style_panels/video_duration_distribution.pdf",
+    "level_counting_bar_png": "analysis_outputs/metadata_stats/paper_style_panels/level_countingtype_distribution_bar.png",
+    "level_counting_bar_pdf": "analysis_outputs/metadata_stats/paper_style_panels/level_countingtype_distribution_bar.pdf"
+  }
+}

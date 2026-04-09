@@ -1,0 +1,38 @@
+{
+  "num_models": 11,
+  "models": [
+    "InternVL3_5-8B",
+    "InternVL3-14B",
+    "InternVL3-8B",
+    "InternVL3-78B",
+    "InternVL3-38B",
+    "InternVL2_5-8B",
+    "gemini-3.1-pro-preview",
+    "Qwen3-VL-8B",
+    "Qwen2.5-VL-7B",
+    "LLaVA-NeXT-7B",
+    "gemini-3-flash-preview"
+  ],
+  "best_delta_model": {
+    "model": "InternVL3_5-8B",
+    "n_eval": 1378,
+    "cot_acc": 0.4034833091436865,
+    "nocot_acc": 0.35413642960812775,
+    "delta_pp": 4.934687953555877,
+    "gain_n": 279,
+    "loss_n": 211,
+    "net_n": 68
+  },
+  "worst_delta_model": {
+    "model": "gemini-3-flash-preview",
+    "n_eval": 1376,
+    "cot_acc": 0.5574127906976745,
+    "nocot_acc": 0.5661337209302325,
+    "delta_pp": -0.8720930232558044,
+    "gain_n": 143,
+    "loss_n": 155,
+    "net_n": -12
+  },
+  "gain_total": 2220,
+  "loss_total": 1866
+}

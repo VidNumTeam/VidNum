@@ -1,0 +1,52 @@
+{
+  "data_path": "question_datasets\\alldata_official.xlsx",
+  "duration_source": "timestamp field (start-end) parsing",
+  "total_rows": 1379,
+  "parsed_duration_count": 1379,
+  "duration_parse_error_count": 0,
+  "missing_cut_file_count": 0,
+  "all_questions_summary": {
+    "count": 1379,
+    "mean_sec": 28.894,
+    "median_sec": 21.0,
+    "p25_sec": 13.0,
+    "p75_sec": 36.0,
+    "p90_sec": 60.0,
+    "min_sec": 3.0,
+    "max_sec": 120.0,
+    "bin_counts": {
+      "0-5s": 37,
+      "5-10s": 111,
+      "10-20s": 480,
+      "20-30s": 268,
+      "30-45s": 228,
+      "45-60s": 106,
+      "60-90s": 102,
+      "90-120s": 45,
+      ">120s": 2
+    }
+  },
+  "eval_subset_definition": "核对结果=正确 AND 问题类型=选择题",
+  "eval_subset_count": 1379,
+  "eval_subset_summary": {
+    "count": 1379,
+    "mean_sec": 28.894,
+    "median_sec": 21.0,
+    "p25_sec": 13.0,
+    "p75_sec": 36.0,
+    "p90_sec": 60.0,
+    "min_sec": 3.0,
+    "max_sec": 120.0,
+    "bin_counts": {
+      "0-5s": 37,
+      "5-10s": 111,
+      "10-20s": 480,
+      "20-30s": 268,
+      "30-45s": 228,
+      "45-60s": 106,
+      "60-90s": 102,
+      "90-120s": 45,
+      ">120s": 2
+    }
+  }
+}

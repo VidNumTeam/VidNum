@@ -1,9 +1,8 @@
 ﻿# VidNum-1.4K: A Comprehensive Benchmark for Video-based Numerical Reasoning
 
 **Project Page:** https://VidNumTeam.github.io  
-**Paper:** *VidNum-1.4K: A Comprehensive Benchmark for Video-based Numerical Reasoning* (MM 2026, author draft)
 
-![VidNum Teaser](paper/teaser.png)
+![VidNum Teaser](paper/Figure1_new.png)
 
 VidNum-1.4K is a benchmark for evaluating **video-based numerical reasoning** in Vision-Language Models (VLMs).
 

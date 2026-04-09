@@ -1,0 +1,23 @@
+{
+  "data_path": "question_datasets/hier_data_releveled_llm.xlsx",
+  "row_count": 1379,
+  "embedding_model": "text-embedding-3-large",
+  "prepend_columns": [],
+  "prepend_with_names": false,
+  "reduction": "lda",
+  "n_components": 2,
+  "balanced_sample": false,
+  "samples_per_label": null,
+  "num_clusters": 3,
+  "cluster_counts": {
+    "0": 226,
+    "1": 745,
+    "2": 408
+  },
+  "candidate_silhouette_scores": {},
+  "cache_path": "analysis_outputs\\question_embeddings\\hier_data_releveled_llm_text-embedding-3-large_question_only_plain_embedding_cache_by_id.pkl",
+  "index_path": "analysis_outputs\\question_embeddings\\hier_data_releveled_llm_text-embedding-3-large_question_only_plain_embedding_index_by_id.pkl",
+  "result_table_path": "analysis_outputs\\question_embeddings\\hier_data_releveled_llm_LLM_Level_Final_lda_2d_embedding_clusters.xlsx",
+  "html_path": "analysis_outputs\\question_embeddings\\hier_data_releveled_llm_LLM_Level_Final_lda_2d_embedding_map.html",
+  "png_path": "analysis_outputs\\question_embeddings\\hier_data_releveled_llm_LLM_Level_Final_lda_2d_embedding_map.png"
+}
