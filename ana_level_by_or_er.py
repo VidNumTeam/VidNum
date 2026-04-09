@@ -1,4 +1,4 @@
-import argparse
+﻿import argparse
 import re
 from pathlib import Path
 
@@ -57,16 +57,7 @@ def find_col(df: pd.DataFrame, candidates):
 
 
 def infer_gt_col(df: pd.DataFrame):
-    candidates = [c for c in ["答案_EN", "答案", "Answer"] if c in df.columns]
-    if candidates:
-        return candidates[0]
-    ends_en = [c for c in df.columns if str(c).endswith("_EN")]
-    if ends_en:
-        # pick most parseable as A-D
-        scores = [(c, df[c].map(normalize_choice).notna().sum()) for c in ends_en]
-        scores.sort(key=lambda x: x[1], reverse=True)
-        return scores[0][0]
-    return None
+    return "correct_answer" if "correct_answer" in df.columns else None
 
 
 def normalize_level(x):
@@ -83,13 +74,13 @@ def evaluate_file(path: Path):
         return None, "missing Predicted_Answer"
     gt_col = infer_gt_col(df)
     if gt_col is None:
-        return None, "cannot infer GT column"
-    level_col = find_col(df, ["LLM_Level_Final", "Hier_Level", "Hierarchy_Level"])
+        return None, "missing correct_answer"
+    level_col = find_col(df, ["Level"])
     if level_col is None:
-        return None, "missing level column"
-    aoe_col = find_col(df, ["meta_counting_type"])
+        return None, "missing Level"
+    aoe_col = find_col(df, ["Counting_Type"])
     if aoe_col is None:
-        return None, "missing meta_counting_type"
+        return None, "missing Counting_Type"
 
     work = df[[gt_col, "Predicted_Answer", level_col, aoe_col]].copy()
     work["gt"] = work[gt_col].map(normalize_choice)
@@ -190,8 +181,21 @@ def main():
     if not overall_df.empty:
         show = overall_df.copy()
         show["acc"] = (show["acc"] * 100).round(2)
+        show = show[["model", "mode", "correct", "acc"]]
         print("\nOverall accuracy (%):")
         print(show.sort_values(["model", "mode"]).to_string(index=False))
+    if not by_level_df.empty:
+        show_level = by_level_df.copy()
+        show_level["acc"] = (show_level["acc"] * 100).round(2)
+        show_level = show_level[["model", "mode", "level", "correct", "acc"]]
+        print("\nAccuracy by level (%):")
+        print(show_level.sort_values(["model", "mode", "level"]).to_string(index=False))
+    if not by_level_aoe_df.empty:
+        show_level_aoe = by_level_aoe_df.copy()
+        show_level_aoe["acc"] = (show_level_aoe["acc"] * 100).round(2)
+        show_level_aoe = show_level_aoe[["model", "mode", "level", "aoe", "correct", "acc"]]
+        print("\nAccuracy by level and A/O/E (%):")
+        print(show_level_aoe.sort_values(["model", "mode", "level", "aoe"]).to_string(index=False))
     if not skipped_df.empty:
         print("\nSkipped:")
         print(skipped_df.to_string(index=False))
@@ -199,4 +203,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
